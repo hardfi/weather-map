@@ -19,8 +19,8 @@ export class Sidebar extends React.Component {
     this.getUserLocation();
   }
 
-  getUserLocation = async () => {
-    await navigator.geolocation.getCurrentPosition(
+  getUserLocation = () => {
+    navigator.geolocation.getCurrentPosition(
       position => this.setState({
         lat: position.coords.latitude,
         lng: position.coords.longitude

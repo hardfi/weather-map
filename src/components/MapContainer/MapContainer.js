@@ -5,22 +5,21 @@ import './MapContainer.scss';
 
 export class MapContainer extends React.Component {
   render() {
-    let icon, coords, temp;
-    if (!!this.props.weather) {
-      coords = this.props.weather.coord;
-      coords['lng'] = coords.lon;
-      temp = Math.round(this.props.weather.main.temp);
-      icon = `${process.env.PUBLIC_URL}/icons/${this.props.weather.weather[0].icon}.png`;
-
+    const {weather, google} = this.props;
+    if (!!weather) {
+      const {coord} = weather;
+      const temp = Math.round(weather.main.temp);
+      const icon = `${process.env.PUBLIC_URL}/icons/${weather.weather[0].icon}.png`;
+      coord['lng'] = coord.lon;
       return (
-        <Map google={this.props.google}
+        <Map google={google}
              zoom={9}
-             initialCenter={coords}
+             initialCenter={coord}
              className='MapContainer'
-             center={coords}>
+             center={coord}>
           <Marker
-            position={coords}
-            label={{fontWeight: 'bold', fontSize: '18px', text: `${temp} \u00b0C`}}
+            position={coord}
+            label={{fontWeight: 'bold', fontSize: '18px', text: `${temp}\u00b0C`}}
             icon={{
               url: icon,
             }}/>
@@ -29,7 +28,6 @@ export class MapContainer extends React.Component {
     } else {
       return null;
     }
-
   }
 }
 
