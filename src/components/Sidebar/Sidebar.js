@@ -91,8 +91,8 @@ export class Sidebar extends React.Component {
   }
 
   render() {
-    let weather = this.props.weather;
-    if (weather) {
+    const {weather} = this.props;
+    if (!!weather) {
       let temp = Math.round(weather.main.temp);
       let pressure = Math.round(weather.main.pressure);
       let speed = Math.round(weather.wind.speed);
