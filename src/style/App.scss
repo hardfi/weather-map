@@ -1,0 +1,68 @@
+@import "Variables";
+
+body {
+  @media only screen and (min-device-width: $mobile-dev-break) {
+    overflow: hidden;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+
+  &.main-content {
+    flex: 1;
+    flex-direction: column;
+
+    @media only screen and (min-device-width: $mobile-dev-break) {
+      flex-direction: row;
+    }
+  }
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.col {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  color: $main-color;
+  padding: 6px 6px;
+
+  @media only screen and (min-device-width: $mobile-dev-break) {
+    width: calc(33.33% - #{$col-gutter});
+  }
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.map-main {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+
+  @media only screen and (min-device-width: $mobile-dev-break) {
+    width: 100%;
+    height: 100%;
+  }
+
+  > div {
+    height: 100%;
+    width: 100%;
+  }
+}

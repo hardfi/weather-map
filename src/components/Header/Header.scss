@@ -1,0 +1,48 @@
+@import "../../style/Variables";
+
+@keyframes Header-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .Header-logo {
+        animation: Header-logo-spin infinite 20s linear;
+    }
+}
+
+.Header-logo {
+    height: 8vmin;
+    pointer-events: none;
+}
+
+.Header {
+    background-color: $main-color;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 100%;
+
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        h2, h6 {
+            margin: 0;
+        }
+    }
+
+    h2 {
+        font-size: 18px;
+
+        @media only screen and (min-device-width: $mobile-dev-break) {
+            font-size: 26px;
+        }
+    }
+}

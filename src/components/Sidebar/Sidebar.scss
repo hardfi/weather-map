@@ -1,0 +1,30 @@
+@import "../../style/Variables";
+
+.weather, .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+
+  .input {
+    margin: 4px;
+
+    @media only screen and (min-device-width: $mobile-dev-break) {
+      margin: 10px;
+    }
+  }
+
+  h2 {
+    margin: 6px;
+
+    @media only screen and (min-device-width: $mobile-dev-break) {
+      margin: 10px;
+    }
+  }
+
+  h3 {
+    margin: 2px;
+  }
+}
